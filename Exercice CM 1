@@ -1,0 +1,49 @@
+#include <stdio.h> 
+#include <stdlib.h>
+
+//Fonction d'une addition
+int addition(int nb1, int nb2)
+{
+    int resultat1;
+    resultat1 = (nb1+nb2);
+    return(resultat1);
+}
+
+//Fonction d'une soustraction
+int soustraction (int nb3, int nb4)
+{
+    int resultat2;
+    resultat2 = (nb3-nb4);
+    return(resultat2);
+}
+
+//Fonction d'une multiplication
+int multiplication(int nb5, int nb6)
+{
+    int resultat3;
+    resultat3 = (nb5*nb6);
+    return(resultat3);
+}
+
+//Fonction d'une division
+int division(int nb7, int nb8)
+{
+    int resultat4;
+    resultat4 = (nb7/nb8);
+    return(resultat4);
+}
+
+//Methode
+int main ()
+{
+    printf("%d",addition(17,8));
+    printf("\n");
+    printf("%d",soustraction(5,2));
+    printf("\n");
+    printf("%d",multiplication(3,6));
+    printf("\n");
+    printf("%d",division(7,4));
+    printf("\n");
+
+    return 0;
+}
