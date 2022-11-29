@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+void saisie(int T[], int N)
+{
+    if(N>0)
+    {
+        saisie(T,N-1);
+        printf("T[%d]=",N-1);
+        scanf("%d",&T[N-1]);
+    }
+}
+
+int somme(int T[], int N)
+{
+    if(N==1)
+        return T[0];
+    else
+        return T[N-1]+somme(T,N-1);
+}
+
+void remplace(int T[], int N, int e)
+{
+    if(N>0)
+    {
+        remplace(T,N-1,e);
+        if(T[N-1]==e)
+            T[N-1]=0;
+    }
+}
+
+int trier(int T[], int N)
+{
+    if(N==1)
+        return 1;
+    else
+        if(T[N-1]<T[N-2])
+            return 0;
+        else
+            return trier(T,N-1);
+}
+
+int max(int T[], int N)
+{
+    if(N==1)
+        return T[0];
+    else
+        if(T[N-1]>max(T,N-1))
+            return T[N-1];
+        else
+            return max(T,N-1);
+}
+
+void minmax(int T[], int N, int *min, int *max)
+{
+    if(N==1)
+    {
+        *min=T[0];
+        *max=T[0];
+    }
+    else
+    {
+        minmax(T,N-1,min,max);
+        if(T[N-1]<*min)
+            *min=T[N-1];
+        if(T[N-1]>*max)
+            *max=T[N-1];
+    }
+}
+
+int main()
+{
+    int T[10];
+    int min, max;
+    saisie(T, 10);
+    printf("Somme : %d", somme(T, 10));
+    remplacer(T, 10, 3);
+    printf("max : %d", max(T, 10));
+    minMax(T, 10 , &min, &max);
+    printf("Min : %d - Max : %d ", min, max);
+    return 0;
+}
