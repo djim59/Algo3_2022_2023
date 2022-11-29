@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef char Chaine[15];
+
+typedef struct{
+    char nom[15];
+    char prenom[15];
+    int codeFonction;
+    float salaire;
+}Employe;
+
+void saisieEmploye(Employe * emp){
+    printf("Saisir un nom :");
+        scanf("%s", emp->nom);
+    printf("Saisir un prénom :");
+        scanf("%s", emp->prenom);
+    printf("Saisir le codeFonction :");
+        scanf("%d", emp->codeFonction);
+    printf("Saisir le salaire :");
+        scanf("%f", emp->salaire);
+};
+
+void afficherEmploye(Employe * emp){
+    printf("Nom : %s \n", emp->nom);
+    printf("Prénom : %s \n", emp->prenom);
+    printf("CodeFonction : %d \n", emp->codeFonction);
+    printf("Salaire : %f \n", emp->salaire);
+};
+
+
+
+void modifEmploye(Employe *emp){
+
+    printf("Entrez le nouveau nom :\n ");
+    scanf("%s", emp->nom);
+    printf("Entrez le nouveau prenom:\n ");
+    scanf("%s", emp->prenom);
+    printf("Entrez le nouveau code de fonction:\n ");
+    scanf("%d", emp->codeFonction);
+    printf("Entrez le nouveau salaire:\n ");
+    scanf("%f", emp->salaire);
+};
+
+int main(){
+    Employe emp;
+    saisieEmploye(&emp);
+    afficherEmploye(&emp);
+    modifEmploye(&emp);
+    afficherEmploye(&emp);
+
+    return 0;
+};
